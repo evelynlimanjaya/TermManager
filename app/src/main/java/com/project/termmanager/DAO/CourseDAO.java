@@ -24,4 +24,7 @@ public interface CourseDAO {
 
     @Query("SELECT * FROM courses_table ORDER BY courseID ASC")
     List<Course> allCoursesResult();
+
+    @Query("SELECT * FROM courses_table WHERE termID = :id")
+    Course courseById(int id);
 }

@@ -17,6 +17,7 @@ import com.project.termmanager.R;
 import java.util.List;
 
 public class Terms extends AppCompatActivity {
+    private Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,8 @@ public class Terms extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewTerms);
-        Repository repository = new Repository(getApplication());
-        List<Term> terms = repository.getAllTerms();
+        repo = new Repository(getApplication());
+        List<Term> terms = repo.getAllTerms();
         final TermAdapter adapter = new TermAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -43,6 +44,15 @@ public class Terms extends AppCompatActivity {
             case android.R.id.home:
                 this.finish();
                 return true;
+            case R.id.refreshTerm:
+                RecyclerView recyclerView = findViewById(R.id.recyclerViewTerms);
+                repo = new Repository(getApplication());
+                List<Term> terms = repo.getAllTerms();
+                final TermAdapter adapter = new TermAdapter(this);
+                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                adapter.setTerms(terms);
+
         }
         return super.onOptionsItemSelected(item);
     }

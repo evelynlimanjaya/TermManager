@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.project.termmanager.Entity.Assessment;
+import com.project.termmanager.Entity.Course;
 import com.project.termmanager.Entity.Term;
 
 import java.util.List;
@@ -25,4 +26,7 @@ public interface AssessmentDAO {
 
     @Query("SELECT * FROM assessments_table ORDER BY assessmentID ASC")
     List<Assessment> allAssessmentsResult();
+
+    @Query("SELECT * FROM assessments_table WHERE assessmentID = :id")
+    Assessment assessmentById(int id);
 }

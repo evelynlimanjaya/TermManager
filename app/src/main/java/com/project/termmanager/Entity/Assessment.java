@@ -14,6 +14,7 @@ public class Assessment {
     private String startDate;
     private String endDate;
     private String type;
+    private int courseID;
 
     public int getAssessmentID() {
         return assessmentID;
@@ -84,6 +85,6 @@ public class Assessment {
         this.courseID = courseID;
     }
 
-    private int courseID;
+
 
 }

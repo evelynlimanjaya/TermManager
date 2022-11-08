@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
@@ -55,8 +55,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:ems="10"
-                    android:hint="mm/dd/yyyy"
-                    android:inputType="text" />
+                    android:hint="mm/dd/yy"
+                    android:inputType="text"
+                    android:focusable="false"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -75,14 +77,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:ems="10"
+                    android:hint="mm/dd/yy"
                     android:inputType="text"
-                    android:hint="mm/dd/yyyy" />
+                    android:focusable="false"/>
             </LinearLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/courseBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="addCourseButton"
                 android:text="Add courses" />
 
             <Button
@@ -97,13 +102,23 @@
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete"
-                android:onClick="deleteButton"/>
+                android:onClick="deleteButton"
+                android:text="Delete" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewCourses"
-                android:layout_width="60dp"
-                android:layout_height="248dp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:fadeScrollbars="false"
+                android:scrollbars="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                 />
 
         </LinearLayout>
     </ScrollView>

@@ -31,10 +31,12 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".UI.CourseInfo"
+            android:name=".UI.CourseEdit"
             android:exported="false"
-            android:parentActivityName=".UI.HomeScreen"
-            android:label="Course Info">
+            android:parentActivityName=".UI.TermEdit"
+            android:label="Course Edit"
+            android:windowSoftInputMode="adjustPan"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -52,7 +54,8 @@
             android:name=".UI.TermEdit"
             android:exported="false"
             android:parentActivityName=".UI.Terms"
-            android:label="Courses">
+            android:label="Term Edit"
+            android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
