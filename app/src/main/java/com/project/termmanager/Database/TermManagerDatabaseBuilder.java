@@ -13,7 +13,7 @@ import com.project.termmanager.Entity.Assessment;
 import com.project.termmanager.Entity.Course;
 import com.project.termmanager.Entity.Term;
 
-@Database(entities = {Term.class, Course.class, Assessment.class}, version = 41111, exportSchema = false)
+@Database(entities = {Term.class, Course.class, Assessment.class}, version = 7, exportSchema = false)
 public abstract class TermManagerDatabaseBuilder extends RoomDatabase {
     public abstract TermDAO termDAO();
     public abstract CourseDAO courseDAO();

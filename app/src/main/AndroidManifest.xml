@@ -12,40 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TermManager"
         tools:targetApi="31">
-        <activity
-            android:name=".UI.AssesmentInfo"
-            android:exported="false"
-            android:parentActivityName=".UI.HomeScreen"
-            android:label="Assesment Info">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".UI.TermInfo"
-            android:exported="false"
-            android:parentActivityName=".UI.HomeScreen"
-            android:label="Term Info">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <receiver
+            android:name=".UI.AssessmentAlertReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
+            android:name=".UI.CourseAlertReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".UI.CourseEdit"
             android:exported="false"
-            android:parentActivityName=".UI.TermEdit"
             android:label="Course Edit"
-            android:windowSoftInputMode="adjustPan"
-            >
+            android:parentActivityName=".UI.TermEdit"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".UI.Assesments"
+            android:name=".UI.AssessmentEdit"
             android:exported="false"
-            android:parentActivityName=".UI.TermEdit"
-            android:label="Assesment">
+            android:label="Assessment"
+            android:parentActivityName=".UI.TermEdit">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -53,9 +43,9 @@
         <activity
             android:name=".UI.TermEdit"
             android:exported="false"
-            android:parentActivityName=".UI.Terms"
             android:label="Term Edit"
-            android:windowSoftInputMode="adjustPan">
+            android:parentActivityName=".UI.Terms"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,8 +53,8 @@
         <activity
             android:name=".UI.Terms"
             android:exported="false"
-            android:parentActivityName=".UI.HomeScreen"
-            android:label="Term List">
+            android:label="Term List"
+            android:parentActivityName=".UI.HomeScreen">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -15,6 +15,7 @@ public class Course {
     private String instructorName;
     private String instructorPhone;
     private String instructorEmail;
+    private String note;
     private int termID;
 
     @Override
@@ -22,12 +23,13 @@ public class Course {
         return "Course{" +
                 "courseID=" + courseID +
                 ", courseName='" + courseName + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
                 ", status='" + status + '\'' +
                 ", instructorName='" + instructorName + '\'' +
                 ", instructorPhone='" + instructorPhone + '\'' +
                 ", instructorEmail='" + instructorEmail + '\'' +
+                ", note='" + note + '\'' +
                 ", termID=" + termID +
                 '}';
     }
@@ -96,6 +98,14 @@ public class Course {
         this.instructorEmail = instructorEmail;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
     public int getTermID() {
         return termID;
     }
@@ -104,7 +114,7 @@ public class Course {
         this.termID = termID;
     }
 
-    public Course(int courseID, String courseName, String startDate, String endDate, String status, String instructorName, String instructorPhone, String instructorEmail, int termID) {
+    public Course(int courseID, String courseName, String startDate, String endDate, String status, String instructorName, String instructorPhone, String instructorEmail, String note, int termID) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.startDate = startDate;
@@ -113,6 +123,7 @@ public class Course {
         this.instructorName = instructorName;
         this.instructorPhone = instructorPhone;
         this.instructorEmail = instructorEmail;
+        this.note = note;
         this.termID = termID;
     }
 }

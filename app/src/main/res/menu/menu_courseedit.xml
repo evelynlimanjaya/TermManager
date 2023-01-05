@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Save Course"
+        android:orderInCategory="100"
+        android:id="@+id/saveCourseMenu"/>
+    <item android:title="Delete Course"
+        android:orderInCategory="100"
+        android:id="@+id/deleteCourseMenu"/>
+    <item android:title="Refresh"
+        android:orderInCategory="100"
+        android:id="@+id/refreshCourseEdit"/>
+    <item android:title="Share Note"
+        android:orderInCategory="100"
+        android:id="@+id/shareNoteCourseEdit"/>
+    <item android:title="Set Start Date Alert"
+        android:orderInCategory="100"
+        android:id="@+id/alertStartCourseEdit"/>
+    <item
+        android:title="Set End Date Alert"
+        android:orderInCategory="100"
+        android:id="@+id/alertEndCourseEdit"/>
+</menu>

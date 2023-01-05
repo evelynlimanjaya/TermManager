@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.TermEdit">
+    tools:context=".UI.AssessmentEdit">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -27,17 +27,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textViewTermTitle"
+                    android:id="@+id/textViewAssessmentTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/term_title" />
+                    android:text="@string/assessment_title" />
 
                 <EditText
-                    android:id="@+id/editTextTermTitle"
+                    android:id="@+id/editTextAssessmentTitle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:ems="10"
-                    android:hint="@string/term_title_example"
+                    android:hint="@string/assessment_title_example"
                     android:inputType="text" />
             </LinearLayout>
 
@@ -47,13 +47,34 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textViewTermStartDate"
+                    android:id="@+id/textViewAssessmentStartDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/start_date" />
 
                 <EditText
-                    android:id="@+id/editTextTermStartDate"
+                    android:id="@+id/editTextAssessmentStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/mm_dd_yy"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewAssessmentEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/course_title" />
+
+                <EditText
+                    android:id="@+id/editTextAssessmentEndDate"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:ems="10"
@@ -68,32 +89,28 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textViewTermEndDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/end_date" />
+                <RadioGroup
+                    android:id="@+id/radioButtonGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <EditText
-                    android:id="@+id/editTextTermEndDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:ems="10"
-                    android:focusable="false"
-                    android:hint="@string/mm_dd_yy"
-                    android:inputType="text" />
+                    <RadioButton
+                        android:id="@+id/radioButtonPerformance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/performance_assessment" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonObjective"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/objective_assessment" />
+                </RadioGroup>
+
             </LinearLayout>
 
             <Button
-                android:id="@+id/courseBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:onClick="addCourseButton"
-                android:text="@string/add_courses" />
-
-            <Button
-                android:id="@+id/saveBtn"
+                android:id="@+id/saveBtnAssessment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -101,27 +118,12 @@
                 android:text="@string/save" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/deleteBtnAssessment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:onClick="deleteButton"
                 android:text="@string/delete" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewCourses"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginBottom="1dp"
-                android:fadeScrollbars="false"
-                android:scrollbars="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

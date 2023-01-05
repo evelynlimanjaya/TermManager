@@ -11,6 +11,7 @@ import com.project.termmanager.Entity.Term;
 import com.project.termmanager.R;
 
 public class HomeScreen extends AppCompatActivity {
+    public static int numCourseAlert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,5 @@ public class HomeScreen extends AppCompatActivity {
         Intent intent = new Intent(HomeScreen.this, com.project.termmanager.UI.Terms.class);
         startActivity(intent);
         Repository repo = new Repository(getApplication());
-//        Term term = new Term(1, "coba", "coba", "coba");
-//        repo.insertTerm(term);
     }
 }

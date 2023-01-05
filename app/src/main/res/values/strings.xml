@@ -3,4 +3,46 @@
     <string name="welcome_to_term_manager">Welcome to Term Manager!</string>
     <string name="clock_image">clock image</string>
     <string name="term_list">Term List</string>
+    <string name="channel_name">courseChannel</string>
+    <string name="channel_description">alert_course_date</string>
+    <string name="assessment_name">assessmentChannel</string>
+    <string name="assessment_description">alert_assessment_date</string>
+    <string name="term_title">Term Title</string>
+    <string name="term_title_example">e.g. Term 1</string>
+    <string name="start_date">Start Date</string>
+    <string name="mm_dd_yy">mm/dd/yy</string>
+    <string name="end_date">End Date</string>
+    <string name="add_courses">Add courses</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="assessment_title">Assessment Title</string>
+    <string name="assessment_title_example">e.g. Assessment 1</string>
+    <string name="course_title">Course Title</string>
+    <string name="performance_assessment">Performance Assessment</string>
+    <string name="objective_assessment">Objective Assessment</string>
+    <string name="course_title_example">e.g. Software Engineering Course</string>
+    <string name="course_status">Course Status</string>
+    <string name="instructor_name">Instructor Name</string>
+    <string name="instructor_name_example">e.g. John Doe</string>
+    <string name="instructor_phone">Instructor Phone</string>
+    <string name="phone_example">e.g. (123) 456 - 7890</string>
+    <string name="instructor_email">Instructor Email</string>
+    <string name="email_example">e.g. email@something.com</string>
+    <string name="note">Note</string>
+    <string name="add_additional_note">Add additional note</string>
+    <string name="add_assessment">Add Assessment</string>
+    <string name="textview">TextView</string>
+    <string name="save_assessment">Save Assessment</string>
+    <string name="delete_assessment">Delete Assessment</string>
+    <string name="refresh">Refresh</string>
+    <string name="set_alert_notification">Set Alert Notification</string>
+    <string name="save_term">Save Term</string>
+    <string name="delete_term">Delete Term</string>
+    <string-array name ="course_status_array">
+        <item>no status</item>
+        <item>in progress</item>
+        <item>completed</item>
+        <item>dropped</item>
+        <item>plan to take</item>
+    </string-array>
 </resources>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Save Term"
+    <item android:title="@string/save_term"
         android:orderInCategory="100"
         android:id="@+id/saveTermMenu"/>
-    <item android:title="Delete Term"
+    <item android:title="@string/delete_term"
         android:orderInCategory="100"
         android:id="@+id/deleteTermMenu"/>
-    <item android:title="Refresh Course List"
+    <item android:title="@string/refresh"
         android:orderInCategory="100"
         android:id="@+id/refreshTermEdit"/>
 </menu>

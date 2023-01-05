@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.project.termmanager.Database.Repository;
 import com.project.termmanager.Entity.Course;
@@ -121,12 +122,28 @@ public class TermEdit extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<Course> filteredCourses = new ArrayList<>();
+        int newTermID = 0;
+        if(termID == -1 && repo.getAllTerms().size() == 0){
+            newTermID = 1;
+        } else if(termID == -1){
+            int newID = repo.getAllTerms().get(repo.getAllTerms().size() - 1).getTermID() + 1;
+            newTermID = newID;
+
+        } else if (termID != -1) {
+            newTermID = termID;
+        }
         for(Course c:repo.getAllCourses()){
-            if(c.getTermID() == termID){
+            if(c.getTermID() == newTermID){
                 filteredCourses.add(c);
             }
         }
-        adapter.setCourses(filteredCourses);
+        adapter.setCourses(filteredCourses, repo.getAllTerms());
+
+        System.out.println("Term id " + termID);
+    }
+
+    private void updateRecyclerView(){
+
     }
 
     private void updateLabelStart(){
@@ -173,39 +190,45 @@ public class TermEdit extends AppCompatActivity {
                 }
                 return true;
             case R.id.deleteTermMenu:
-                term = new Term(termID, name, start, end);
-                repo.deleteTerm(term);
+                List<Course> coursesList = repo.getAllCourses();
+                int coursesCount = 0;
+                for(Course c: coursesList){
+                    if(c.getTermID() == termID){
+                        coursesCount++;
+                    }
+                }
+                System.out.println("Courses count: " + coursesCount);
+                if(coursesCount == 0){
+                    term = new Term(termID, name, start, end);
+                    repo.deleteTerm(term);
+                } else {
+                    Toast.makeText(TermEdit.this, "Can't delete term with courses", Toast.LENGTH_LONG).show();
+                }
                 return true;
 
             case R.id.refreshTermEdit:
-                Term selectedTerm = repo.getTermById(termID);
-                termTitle = findViewById(R.id.editTextTermTitle);
-                termStartDate = findViewById(R.id.editTextTermStartDate);
-                termEndDate = findViewById(R.id.editTextTermEndDate);
-                if(termID != -1){
-                    name = selectedTerm.getTermTitle();
-                    termTitle.setText(name);
-
-                    start = selectedTerm.getStartDate();
-                    termStartDate.setText(start);
-
-                    end = selectedTerm.getEndDate();
-                    termEndDate.setText(end);
-
-                    System.out.println(termID);
-                }
-
                 RecyclerView recyclerView = findViewById(R.id.recyclerViewCourses);
                 final CourseAdapter adapter = new CourseAdapter(this);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
                 List<Course> filteredCourses = new ArrayList<>();
+
+                int newTermID = 0;
+                if(termID == -1 && repo.getAllTerms().size() == 0){
+                    newTermID = 1;
+                } else if(termID == -1){
+                    int newID = repo.getAllTerms().get(repo.getAllTerms().size() - 1).getTermID() + 1;
+                    newTermID = newID;
+
+                } else if (termID != -1) {
+                    newTermID = termID;
+                }
                 for(Course c:repo.getAllCourses()){
-                    if(c.getTermID() == termID){
+                    if(c.getTermID() == newTermID){
                         filteredCourses.add(c);
                     }
                 }
-                adapter.setCourses(filteredCourses);
+                adapter.setCourses(filteredCourses, repo.getAllTerms());
                 return true;
 
 
@@ -230,6 +253,20 @@ public class TermEdit extends AppCompatActivity {
     }
 
     public void deleteButton(View view) {
+        List<Course> coursesList = repo.getAllCourses();
+        int coursesCount = 0;
+        for(Course c: coursesList){
+            if(c.getTermID() == termID){
+                coursesCount++;
+            }
+        }
+        System.out.println("Courses count: " + coursesCount);
+        if(coursesCount == 0){
+            Term term = new Term(termID, name, start, end);
+            repo.deleteTerm(term);
+        } else {
+            Toast.makeText(TermEdit.this, "Can't delete term with courses", Toast.LENGTH_LONG).show();
+        }
 
     }
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/save_assessment"
+        android:orderInCategory="100"
+        android:id="@+id/saveAssessmentMenu"/>
+    <item android:title="@string/delete_assessment"
+        android:orderInCategory="100"
+        android:id="@+id/deleteAssessmentMenu"/>
+    <item android:title="@string/refresh"
+        android:orderInCategory="100"
+        android:id="@+id/refreshAssessmentMenu"/>
+    <item
+        android:orderInCategory="100"
+        android:title="Set Start Date Alert"
+        android:id="@+id/alertStartAssessmentEdit"/>
+    <item
+        android:orderInCategory="100"
+        android:title="Set End Date Alert"
+        android:id="@+id/alertEndAssessmentEdit" />
+</menu>
